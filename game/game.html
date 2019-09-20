@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bowl Game</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
+        <style>
+            body{
+              padding: 2rem;
+              }
+
+            .bowl {
+              height: 5rem;
+              width: 5rem;
+              margin-right: 1rem;
+              border: 0.6rem solid rgba(10,10,10,0.2);
+              padding: 1.2rem;
+              z-index: 10;
+            }
+
+            #b1 {
+              background-color: #8A80B9;
+            }
+            
+            #b2 {
+              background-color: #ED8681;
+            }
+            
+            #b3 {
+              background-color: #9CCCB7;
+            }
+            
+            #b4 {
+              background-color: #9DC6E5;
+            }
+            
+            #b5 {
+              background-color: #E1E47F;
+            }
+            
+            .coin {
+              width: 1rem;
+              height: 1rem;
+              background-color: #E8CD00;
+              border: 2px solid #8E6D00;
+              border-radius: 1rem;
+              z-index: 0;
+            }
+
+            .hide {
+              background-color: rgba(0,0,0,0) !important;
+              border-color: rgba(0,0,0,0) !important;
+            }
+            
+            #result {
+                visibility: hidden;
+                margin-top: 1rem;
+            }
+            
+            #winmessage, #loosemessage {
+                display: none;
+            }
+        
+        </style>
+    </head>
+    
+    <body>
+        
+    <h1>
+     Where's the golden coin?
+    </h1>
+
+    <button class="bowl uk-button uk-icon-button" 
+      id="b1">
+     <div class="coin hide"></div>
+    </button>
+
+    <button class="bowl uk-button uk-icon-button" 
+      id="b2">
+     <div class="coin hide"></div>
+    </button>
+        
+    <button class="bowl uk-button uk-icon-button" 
+      id="b3">
+     <div class="coin hide"></div>
+    </button>
+        
+    <button class="bowl uk-button uk-icon-button" 
+      id="b4">
+     <div class="coin hide"></div>
+    </button>
+        
+    <button class="bowl uk-button uk-icon-button" 
+      id="b5">
+     <div class="coin hide"></div>
+    </button>
+
+    <div id="result">
+      <p id="winmessage">
+        Nice! You found the coin!
+      </p>
+        <p id="loosemessage">
+        Oops...the coin wasn't there. 
+      </p>
+      <button class="uk-button uk-button-primary" id="replay">
+      Play Again
+      </button>
+    </div>
+    
+    <script>
+        
+        var guess = document.querySelectorAll(".bowl");
+        var coins = document.querySelectorAll(".coin");
+
+        for (i = 0; i < guess.length; i++) {
+            guess[i].addEventListener('click', check);
+          }
+
+         function check() {
+           let coin = Math.floor(Math.random() * guess.length)
+           let result = guess[coin].getAttribute("id") == this.getAttribute("id")
+           if(result){
+               document.querySelector("#winmessage").style.display = "inherit";
+               this.childNodes[1].classList.remove('hide');
+           } else {
+               document.querySelector("#loosemessage").style.display = "inherit";
+           }
+             
+            for (i = 0; i < guess.length; i++) {
+                guess[i].disabled=true;
+            }
+             
+           document.querySelector("#result").style.visibility = "visible";
+           this.classList.add('hide');
+            console.log(result)
+         }
+        
+        let play = document.querySelector('#replay');
+
+        play.addEventListener('click', again);
+        
+        function again() {
+            location.reload(true);
+        }
+        
+    </script>
+    </body>
+</html>
