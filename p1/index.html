@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bowl Game</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+        <script src="script.js" defer></script>
+    </head>
+    
+    <body class="uk-grid">
+    
+<div id="app" v-cloak class="uk-align-center uk-width-1-1">
+    
+    <div class="uk-card uk-card-default uk-card-body uk-position-center uk-width-1-2">
+        
+    <h1>
+     Where's the golden coin?
+    </h1>
+
+    <button class="bowl uk-button uk-icon-button" 
+      id="b1" v-on:click='check(1)' v-bind:class="{hide: attempt == 1}" :disabled="attempt != null">
+     <div class="coin" v-bind:class="{hide: coin != 1}"></div>
+    </button>
+
+    <button class="bowl uk-button uk-icon-button" 
+      id="b2" v-on:click='check(2)' v-bind:class="{hide: attempt == 2}" :disabled="attempt != null">
+     <div class="coin " v-bind:class="{hide: coin != 2}"></div>
+    </button>
+        
+    <button class="bowl uk-button uk-icon-button" 
+      id="b3" v-on:click='check(3)' v-bind:class="{hide: attempt == 3}" :disabled="attempt != null">
+     <div class="coin " v-bind:class="{hide: coin != 3}"></div>
+    </button>
+        
+    <button class="bowl uk-button uk-icon-button" 
+      id="b4" v-on:click='check(4)' v-bind:class="{hide: attempt == 4}" :disabled="attempt != null">
+     <div class="coin " v-bind:class="{hide: coin != 4}"></div>
+    </button>
+        
+    <button class="bowl uk-button uk-icon-button" 
+      id="b5" v-on:click='check(5)' v-bind:class="{hide: attempt == 5}" :disabled="attempt != null">
+     <div class="coin " v-bind:class="{hide: coin != 5}"></div>
+    </button>
+
+    <div id="result" v-if='attempt != null'>
+      <p id="winmessage" v-if='result'>
+        Nice! You found the coin!
+      </p>
+      <p id="loosemessage" v-else>
+        Oops...the coin wasn't there. 
+      </p>
+      <button class="uk-button uk-button-primary" id="replay" v-if='counter > 0' v-on:click='retry'>
+      Play Again
+      </button>
+    </div>
+    
+    
+    <div id="score" v-if='counter>0' class="uk-card">
+        <br>
+        <hr>
+    <p><b>Your Score:</b> {{score}} / {{counter}}</p>
+        
+    </div>
+    </div>
+</div>
+    
+    </body>
+    
+</html>
