@@ -1,5 +1,11 @@
+import Vue from 'vue';
+import BowlsCoin from './components/BowlsCoin.vue';
+
 let app = new Vue({
     el: '#app',
+    components: {
+        'bowls-coin': BowlsCoin
+    },
     data: {
         'result': null,
         'results': [],
@@ -22,6 +28,6 @@ let app = new Vue({
             this.attempt = null;
             this.result = null;
         },
-}
+    }
 
 })

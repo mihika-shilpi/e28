@@ -7,28 +7,29 @@
         <title>Bowl Game</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css" />
         <link rel="stylesheet" href="style.css" />
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
-        <script src="script.js" defer></script>
+        <script src='/js/script.js' defer></script>
     </head>
     
-    <body class="uk-grid">
+    <body>
     
-<div id="app" v-cloak class="uk-align-center uk-width-1-1">
-    
-    <div class="uk-card uk-card-default uk-card-body uk-position-center uk-width-1-2">
+<div id="app" v-cloak class="uk-align-center" uk-grid>
+    <div class="uk-width-1-2@m uk-position-center">
+    <div class="uk-card uk-card-default uk-card-body">
         
     <h1>
      Where's the golden coin?
     </h1>
+        
+    <bowls-coin v-for='i in [1,2,3,4,5]'
+                      @check='check($event)'
+                      :bowlnum=i
+                      :key=i
+                    v-bind:class="{hide: attempt == i}" 
+                    :disabled="attempt != null">
+        <template #coin><div class="coin" v-bind:class="{hide: coin != i}"></div></template>
+    </bowls-coin>
 
-    <button v-for='i in [1,2,3,4,5]' 
-            class="bowl uk-button uk-icon-button"
-            v-bind:id="'b' + i" 
-            v-on:click='check(i)' 
-            v-bind:class="{hide: attempt == i}" 
-            :disabled="attempt != null">
-	   <div class="coin" v-bind:class="{hide: coin != i}"></div>
-    </button>
+    <bowls-coin> </bowls-coin>
 
     <div id="result" v-if='attempt != null'>
       <p id="winmessage" v-if='result'>
@@ -48,6 +49,7 @@
         <hr>
     <p><b>Your Score:</b> {{score}} / {{counter}}</p>
         
+    </div>
     </div>
     </div>
 </div>

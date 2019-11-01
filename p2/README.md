@@ -1,7 +1,11 @@
-# Project 1
+# Project 2
 + By: Mihika Shilpi
-+ Production URL: <http://p1.mihikashilpi.space>
++ Production URL: <http://p2.mihikashilpi.space>
+
+## Build strategy
+*Put an x in the build strategy you used. Put an x in each if you tackled both.*
++ [ x ] Integrated
++ [ ] Comprehensive
 
 ## Outside resources
-+ W3Schools for javascript array sum: <https://www.w3schools.com/jsref/jsref_reduce.asp>
 + UI Kit for CSS input
