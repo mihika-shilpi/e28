@@ -1,5 +1,5 @@
 <template>
-    <div id='like-page'>
+    <div id='like-page' style="width:100%;">
 
         <h1>Your Like</h1>
 
