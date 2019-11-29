@@ -1,15 +1,36 @@
 <template>
     <div id='like-page'>
+
         <h1>Your Like</h1>
 
         <div v-if='items.length == 0'>No items</div>
 
-        <ul v-else-if='albums.length > 0' class='cleanList'>
-            <li v-for='item in items' :key='item.id'>
-                <button @click='removeFromLike(item.id)'>Remove</button>
-                {{ getAlbumDetails(item.id)['name'] }}
-            </li>
-        </ul>
+        <div v-else-if='albums.length > 0' uk-grid>
+
+
+            <div v-for='item in items' :key='item.id' class="uk-width-1-2@s uk-width-1-3@m uk-width-1-4@l">
+            <router-link :to='{ name: "album", params: {"id" : item.id }}'>
+            <div>
+            <div class="uk-card uk-card-default">
+                <div class="uk-card-media-top">
+                <img
+                    :alt='"Album image of  " + item.name'
+                    :src='"./../../assets/images/" + item.id + ".jpg"'
+                />
+                </div>
+                    <div class="uk-card-footer">
+                    <button @click='removeFromLike(item.id)' class="uk-button uk-button-default uk-button-small uk-width-1-1">Remove</button>
+                    <transition name='fade'>
+                      <div class='uk-alert-danger' v-if='addAlert'>Your like has been removed!</div>
+                  </transition>
+
+                </div>
+            </div>
+            </div>
+            </router-link>
+            </div>
+        </div>
+
     </div>
 </template>
 

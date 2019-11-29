@@ -6,7 +6,6 @@
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
             <img
-                class='album-thumb'
                 :alt='"Album image of  " + album.name'
                 :src='"./../assets/images/" + album.id + ".jpg"'
             />

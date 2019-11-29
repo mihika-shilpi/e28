@@ -1,5 +1,5 @@
 <template>
-    <div id='app'>
+    <div id='app' style="width:100%">
     <div uk-sticky class="uk-navbar-container tm-navbar-container uk-sticky uk-sticky-fixed" id="navigation">
         <div class="uk-container uk-container-expand">
         <nav class="uk-navbar">
@@ -7,6 +7,7 @@
 
                 <img
             class="uk-margin-small-right"
+            :style="{ height:2 + 'rem' }"
             :alt='"Logo"'
             :src='"./assets/images/logo.png"'
         />
@@ -27,11 +28,11 @@
         </div>
     </div>
 
-        <div class="uk-align-center ">
+        <div class="uk-align-center " style="width:100%">
 
-                 <div class="uk-card uk-card-default uk-card-body uk-width-10-12">
+                 <div class="uk-card uk-grid uk-card-body uk-width-10-12">
 
-                 <div uk-grid >
+                 <div uk-grid style="width:100%">
                  <router-view></router-view>
                  </div>
 
