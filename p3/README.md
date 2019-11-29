@@ -1,24 +1,14 @@
-# p3
+# Project 3
++ By: Mihika Shilpi
++ Production URL: <http://p3.mihikashilpi.space>
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Outline of features
+* View list of albums
+* Open album to read summary and view song list
+* Add album to Likes
+* View likes
+* Remove album from likes
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Outside resources
+* Album information and album artwork sourced online 
