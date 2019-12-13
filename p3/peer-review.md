@@ -35,4 +35,4 @@ Not that I did this efficiently either, But I do see several axios calls, which 
 I really liked how the code wass divided up into files - it took no effort on my part to follow what came from where / what went from where. 
 
 ### Do you have any additional comments not covered in the above questions?
-I really enjoyed this app! I mean yes, I'd love to design it different, because that's me. But it flowed easy, it worked as I as a user would expect it to, 
+I really enjoyed this app! I mean yes, I'd love to design it different, because that's me. But it flowed easy, it worked as I as a user would expect it to, and i found myself wanting to have a long favourites list! 
