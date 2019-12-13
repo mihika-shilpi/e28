@@ -22,9 +22,17 @@ The page views aren't commented, but are very simple and self evident. This didn
 It would have been nice if the unused comments controllers were noted out, but once again, it was very easy to figure out given the clear variable naming, and I don't feel it bothered me. 
 
 ### Are there any parts of the code that you found interesting or taught you something new?
-Absolutely! The entire social share sest up, which I myself have not used before, was very interessting to read and subesuently research. I have not yet used it, but I know it's on my 'to-explore' list! 
+Absolutely! The entire social share set up, which I myself have not used before, was very interessting to read and subsequently research. I have not yet used it, but I know it's on my 'to-explore' list! 
+```
+<network network='facebook'>
+  <i class='fa fa-fw fa-facebook'></i> Facebook
+</network>
+```
+Network is a new concept for me that I'd like to explore. I also wonder about the customisability of network and it's related views. 
 
 ### Are there any best practices discussed in course material that you feel were not addressed in the code?
 Not that I did this efficiently either, But I do see several axios calls, which could potentially be optimised. 
+I really liked how the code wass divided up into files - it took no effort on my part to follow what came from where / what went from where. 
 
 ### Do you have any additional comments not covered in the above questions?
+I really enjoyed this app! I mean yes, I'd love to design it different, because that's me. But it flowed easy, it worked as I as a user would expect it to, 
