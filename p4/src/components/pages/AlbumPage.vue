@@ -11,7 +11,7 @@
               :src='"./../../assets/images/" + album.id + ".jpg"'
           />
 
-          <button @click='addToFavourite(album.id)' class="uk-button uk-button-primary uk-margin"> <span uk-icon="icon: heart"></span> Favourite </button>
+          <button data-test='add-to-favourites-button' @click='addToFavourites(album.id)' class="uk-button uk-button-primary uk-margin"> <span uk-icon="icon: heart"></span> Favourite </button>
 
           <transition name='fade'>
             <div class='uk-alert-success' v-if='addAlert'>Your favourite has been updated!</div>
@@ -21,7 +21,7 @@
 
         <div class="uk-card uk-width-2-3">
 
-        <h1 class="uk-heading-divider">{{ album.name }}</h1>
+        <h1 data-test="album-name" class="uk-heading-divider">{{ album.name }}</h1>
 
         <h3 class='uk-heading-small'>{{ album.artist }}</h3>
         <p class='description'>{{ album.description }}</p>
@@ -50,9 +50,14 @@ export default {
             addAlert: false
         };
     },
+    computed: {
+        album: function() {
+            return this.$store.getters.getAlbumByID(this.id);
+        }
+    },
     mounted() {},
     methods: {
-        addToFavourite: function(albumId) {
+        addToFavourites: function(albumId) {
             let favourites = new app.Favourite();
             favourites.add(albumId);
             this.$store.commit('setFavouritesCount', favourites.count());

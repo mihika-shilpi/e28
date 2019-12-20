@@ -5,25 +5,25 @@
 
         <div v-if='items.length == 0'>No items</div>
 
-        <div v-else-if='albums.length > 0' uk-grid>
+        <div v-else-if='albums.length > 0' uk-grid >
 
 
             <div v-for='item in items' :key='item.id' class="uk-width-1-2@s uk-width-1-3@m uk-width-1-4@l">
-            <router-link :to='{ name: "album", params: {"id" : item.id }}'>
-            <div>
+            <div data-test="favourites-contents">
             <div class="uk-card uk-card-default">
+                <router-link :to='{ name: "album", params: {"id" : item.id }}'>
                 <div class="uk-card-media-top">
                 <img
                     :alt='"Album image of  " + item.name'
                     :src='"./../../assets/images/" + item.id + ".jpg"'
                 />
                 </div>
+                </router-link>
                     <div class="uk-card-footer">
-                    <button @click='removeFromFavourite(item.id)' class="uk-button uk-button-default uk-button-small uk-width-1-1">Remove</button>
+                    <button data-test='remove-from-favourites-button' @click='removeFromFavourite(item.id)' class="uk-button uk-button-default uk-button-small uk-width-1-1">Remove</button>
                 </div>
             </div>
             </div>
-            </router-link>
             </div>
         </div>
 
@@ -46,7 +46,7 @@ export default {
             return this.$store.getters.Id(albumId);
         },
         removeFromFavourite: function(albumId) {
-            this.favourite.remove(albumId);
+            this.favourites.remove(albumId);
             this.$store.commit('setFavouritesCount', this.favourites.count());
         }
     },

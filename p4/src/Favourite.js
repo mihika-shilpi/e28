@@ -37,6 +37,15 @@ export default class Favourite {
         localStorage.setItem('favourite', JSON.stringify(this.items))
     }
 
+    add(albumId) {
+
+        // First see if album is already present
+        this.items.push({
+                id: albumId,
+            });
+
+        this.update();
+    }
 
     /**
      * Remove an item from items via albumId

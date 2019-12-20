@@ -28,8 +28,8 @@ describe('ShowAlbum.vue', () => {
 
         // Define a album we can test
         let album = {
-            id: 1,
-            name: 'Nine Track Mind',
+            id: "1",
+            name: 'Abba Gold',
             description:
                 'This one is a 2014 release by Charlie Puth that was a chart topper.',
             artist: 'Charlie Puth',
@@ -50,7 +50,5 @@ describe('ShowAlbum.vue', () => {
 
         // Assert our results
         expect(wrapper.text()).to.include(album.name)
-        let foundAlbumLink = wrapper.find('[data-test="album-link"]').exists();
-        expect(foundAlbumLink).to.equal(true);
     })
 })

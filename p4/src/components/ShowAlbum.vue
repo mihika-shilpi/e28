@@ -6,12 +6,13 @@
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
             <img
+                v-bind:data-test='"album-image-" + album.id'
                 :alt='"Album image of  " + album.name'
                 :src='"./../assets/images/" + album.id + ".jpg"'
             />
             </div>
             <div class="uk-card-body">
-                <h3 class="uk-card-title">{{ album.name }}</h3>
+                <h3 data-test="album-name" class="uk-card-title">{{ album.name }}</h3>
             </div>
         </div>
         </div>
