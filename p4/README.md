@@ -4,7 +4,8 @@
 
 ## Improvements based on P3 peer review feedback
 + removed excessive axios calls
-+ reworking wording of Like for understading  
++ Reworked wording + presentation of 'Like' to favourites for understanding  
++ Corrected error where removing like redirected to album
 
 ## Outside resources
 + ui Kit CSS
