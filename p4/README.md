@@ -1,14 +1,11 @@
 # Project 4
 + By: Mihika Shilpi
-+ Production URL: <http://p3.mihikashilpi.space>
++ Production URL: <http://p4.mihikashilpi.space>
 
-
-## Outline of features
-* View list of albums
-* Open album to read summary and view song list
-* Add album to Likes
-* View likes
-* Remove album from likes
+## Improvements based on P3 peer review feedback
++ removed excessive axios calls
++ reworking wording of Like for understading  
 
 ## Outside resources
-* Album information and album artwork sourced online
++ ui Kit CSS
++ Album artwork and songlists from internet
